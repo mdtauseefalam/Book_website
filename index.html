@@ -1,0 +1,68 @@
+<!---------------------------------------------------------
+File Name: index.html
+Description: for providing the login UI for the application
+--------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Book site</title>
+	  <script src="JS/BookDetails.js"></script>
+      <script src="JS/BookList.js"></script>
+	  <script src="JS/Booklogin.js"></script>
+	  
+	  <link rel="stylesheet" href="CSS/Booklogin.css"> 
+	  <link rel="stylesheet" href="CSS/App.css">
+	  <link rel="stylesheet" href="CSS/BookDetails.css"> 
+	  <link rel="stylesheet" href="CSS/BookList.css">	    
+	</head>
+	<body onload="loginLoad()" id="idIndex">
+	
+		<div  class="loginHtml"  id="idlogin" style="display:block;">
+			<h1 class="close-heading">Sign In</h1>
+			<div class="container" >
+				Username:
+				<input type="text" class="textClass" id="iduser">
+				<br><br>
+				Password:&nbsp;
+				<input type="password" class="textClass" id="idpassword">
+				<br>
+				<input type="checkbox" id="idcheck" class="largerCheckbox" onclick="rememberMe()"> Remember Me
+				<input type="button" value="Sign In" name="submit" class="buttonClass" onclick="validateUser()">
+			</div>			
+		</div>
+		
+		<div class="booklistHtml" id="idbooklist" style="display:none;">
+				<div class="detailsheader">
+				<h1>Book List</h1>
+				</div>
+				<div class="rowTable" id="ListTable" ></div>
+		</div>
+		
+		<div class="bookdetailsHtml" id="idbookdetails" style="display:none;">
+			<div class="detailsheader">
+			<a onclick="goBack()"><img class="backImage" src ="images/arrow.jpg"></img></a>
+			<h1 id="idbook"></h1>
+			</div>
+				<img   class="CImage" id="idimage"  ></img>
+				<table class="detailtable" onmouseleave="updateBookDetails()">
+				<tr>
+				 <td><label class="labelclass"> Author:</label></td>
+				 <td><input type="text"  class="inputText" id="idauth"></input> </td>
+				 </tr>
+				<tr>
+				 <td> <label class="labelclass"> Date of published:</label> </td>
+				 <td><input type="text" class="inputText" id="iddop"></input></td>
+				</tr>
+				<tr>
+				  <td><label class="labelclass"> Total page:</label> </td>
+				  <td><input type="text" class="inputText" id="idpage"></input></td>
+				</tr>
+				<tr>
+				 <td><label class="labelclass">Price:</label> </td>
+				 <td> <input type="text" class="inputText" id="idprice"></input> </td>
+				</tr>
+				</table>
+		</div>
+		
+	</body>
+</html>
